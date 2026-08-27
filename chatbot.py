@@ -25,3 +25,14 @@ while message != "bye":
         print("Bot: I can answer simple questions based on my predefined rules.")
     else:
         print(f"Bot: You said {message}")
+
+
+'''
+import datetime
+
+x = datetime.datetime.now()
+current_date = x.date()
+current_time = x.time()
+print(f"The current date is {current_date}")
+print(f"The current time is {current_time}")
+'''
