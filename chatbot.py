@@ -13,13 +13,15 @@ message = ""
 while not (message in ["bye", "goodbye", "quit", "exit"]):
 
     message = input("You: ").strip().lower()
+    words = message.split()
     x = datetime.datetime.now()
     current_date = x.date()
     current_time = x.time()
+
     if message in ["bye", "goodbye", "quit", "exit"]:
         print("Goodbye! Have a great day!")
 
-    elif "hi" in message or "hello" in message or "hey" in message:
+    elif "hi" in words or "hello" in words or "hey" in words:
         print("Bot: Hello! How can I help you?")
 
     elif message in ["what is your name", "what's your name", "who are you", "your name"]:
@@ -42,3 +44,19 @@ while not (message in ["bye", "goodbye", "quit", "exit"]):
 
     else:
         print("Bot: I'm sorry, I don't understand that yet. Try asking about my name, capabilities, date, or time.")
+
+
+
+# def get_current_time():
+#     x = datetime.datetime.now()
+#     current_time = x.time()
+#     return current_time
+# # result = get_current_time()
+# # print(result)
+
+# def get_current_date():
+#     x = datetime.datetime.now()
+#     current_date = x.date()
+#     return current_date
+# # result = get_current_date()
+# # print(result)
