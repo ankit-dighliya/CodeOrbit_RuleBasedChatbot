@@ -1,16 +1,5 @@
 import datetime
 
-def get_current_time():
-    current_datetime = datetime.datetime.now()
-    current_time = current_datetime.time()
-    return current_time
-
-def get_current_date():
-    current_datetime = datetime.datetime.now()
-    current_date = current_datetime.date()
-    return current_date
-
-
 name = input("Bot: What is your name? ")
 
 print("You:", name)
@@ -25,8 +14,9 @@ while not (message in ["bye", "goodbye", "quit", "exit"]):
 
     message = input("You: ").strip().lower()
     words = message.split()
-
-    
+    x = datetime.datetime.now()
+    current_date = x.date()
+    current_time = x.time()
 
     if message in ["bye", "goodbye", "quit", "exit"]:
         print("Goodbye! Have a great day!")
@@ -44,12 +34,10 @@ while not (message in ["bye", "goodbye", "quit", "exit"]):
         print("Bot: I can answer simple questions based on my predefined rules.")
 
     elif message in ["what is the time", "what time is it", "current time"]:
-        result_time = get_current_time()
-        print(f"Bot: The current time is {result_time}")
+        print(f"Bot: The current time is {current_time}")
 
     elif message in ["what is today's date", "what is the date", "today's date", "current date"]:
-        result_date = get_current_date()
-        print(f"Bot: Today's date is {result_date}")
+        print(f"Bot: Today's date is {current_date}")
 
     elif "thanks" in message or "thank" in message:
         print("You're welcome!")
@@ -59,10 +47,16 @@ while not (message in ["bye", "goodbye", "quit", "exit"]):
 
 
 
-def get_response(message):
-    words = message.split()
+def get_current_time():
+    x = datetime.datetime.now()
+    current_time = x.time()
+    return current_time
+# result = get_current_time()
+# print(result)
 
-    if message in ["bye", "goodbye", "quit", "exit"]:
-            return "Goodbye! Have a great day!"
-    elif "hi" in words or "hello" in words or "hey" in words:
-            return "Bot: Hello! How can I help you?"
+def get_current_date():
+    x = datetime.datetime.now()
+    current_date = x.date()
+    return current_date
+# result = get_current_date()
+# print(result)
