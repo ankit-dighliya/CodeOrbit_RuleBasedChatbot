@@ -78,4 +78,4 @@ while not (message in ["bye", "goodbye", "quit", "exit"]):
 
     print(response)
 
-elif "time" in message and ("what" in message or "what's" in message or "current" in message or "tell" in message):
+# elif "time" in message and ("what" in message or "what's" in message or "current" in message or "tell" in message):
