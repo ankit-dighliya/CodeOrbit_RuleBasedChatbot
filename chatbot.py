@@ -18,11 +18,17 @@ def get_response(message):
     
     elif "hi" in words or "hello" in words or "hey" in words:
         return "Hello! How can I help you?"
+
+    elif "good" in message and ("morning" in message or "afternoon" in message or "evening" in message):
+        return "Good to see you! How can I help you?"
+
+    elif "good" in message and "night" in message:
+        return "Good night! Have a great day tomorrow!"
     
     elif ("name" in message and "your" in message) or ("who" in message and "you" in message): 
         return "My name is SimpleBot. I'm a rule-based chatbot."
     
-    elif message in ["how are you", "how are you doing", "are you okay"]:
+    elif ("how" in message and "are" in message and "you" in message) or ("are" in message and "you" in message and "okay" in message):
         return "I'm doing great! Thanks for asking."
     
     elif message in ["what can you do", "what are your capabilities", "help me", "what do you do"]:
@@ -61,3 +67,4 @@ while not (message in ["bye", "goodbye", "quit", "exit"]):
     response = get_response(message)
 
     print(response)
+
