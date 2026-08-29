@@ -1,4 +1,5 @@
 import datetime
+import random
 
 def get_current_time():
     current_datetime = datetime.datetime.now()
@@ -13,11 +14,20 @@ def get_current_date():
 def get_response(message):
     words = message.split()
 
+    thank_responses = ["You're welcome!",
+                       "Glad I could help!",
+                       "Anytime!"]
+
+    greeting_responses = ["Hello! How can I help you?",
+                          "Hi there! What can I do for you?",
+                          "Hey! Nice to chat with you."]
+    
+
     if message in ["bye", "goodbye", "quit", "exit"]:
         return "Goodbye! Have a great day!"
     
     elif "hi" in words or "hello" in words or "hey" in words:
-        return "Hello! How can I help you?"
+        return random.choice(greeting_responses)
 
     elif "good" in message and ("morning" in message or "afternoon" in message or "evening" in message):
         return "Good to see you! How can I help you?"
@@ -41,9 +51,9 @@ def get_response(message):
     elif message in ["what is today's date", "what is the date", "today's date", "current date"]:
         result_date = get_current_date()
         return f"Today's date is {result_date}"
-    
+
     elif "thanks" in message or "thank" in message:
-        return "You're welcome!"
+        return random.choice(thank_responses)
 
     else:
         return "I'm sorry, I don't understand that yet. Try asking about my name, capabilities, date, or time."
@@ -68,3 +78,4 @@ while not (message in ["bye", "goodbye", "quit", "exit"]):
 
     print(response)
 
+elif "time" in message and ("what" in message or "what's" in message or "current" in message or "tell" in message):
