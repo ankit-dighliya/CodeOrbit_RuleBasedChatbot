@@ -44,11 +44,21 @@ def get_response(message):
     elif message in ["what can you do", "what are your capabilities", "help me", "what do you do"]:
         return "I can answer simple questions based on my predefined rules."
     
-    elif message in ["what is the time", "what time is it", "current time"]:
+    elif "time" in message and (
+    "what" in message
+    or "what's" in message
+    or "current" in message
+    or "tell" in message
+    ):
         result_time = get_current_time()
         return f"The current time is {result_time}"
     
-    elif message in ["what is today's date", "what is the date", "today's date", "current date"]:
+    elif "date" in message and (
+    "what" in message
+    or "today" in message
+    or "current" in message
+    or "what's" in message
+    ):
         result_date = get_current_date()
         return f"Today's date is {result_date}"
 
@@ -77,5 +87,3 @@ while not (message in ["bye", "goodbye", "quit", "exit"]):
     response = get_response(message)
 
     print(response)
-
-# elif "time" in message and ("what" in message or "what's" in message or "current" in message or "tell" in message):
