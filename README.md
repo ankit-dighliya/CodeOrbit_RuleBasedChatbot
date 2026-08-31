@@ -100,6 +100,11 @@ Check your Python version:
 ```bash
 python --version
 ```
+### Run the chatbot
+
+```bash
+python chatbot.py
+```
 
 ## 💬 Example Conversation
 Bot: What is your name? Ankit
@@ -126,9 +131,16 @@ You: bye
 Bot: Goodbye! Have a great day!
 
 
+## 🖥️ Demo
+
+![SimpleBot Demo](screenshots/chatbot-demo.png)
+
+
 ## 📂 Project Structure
 CodeOrbit_RuleBasedChatbot/
 │
+└── screenshots/
+   └── chatbot-demo.png
 ├── .gitignore
 ├── chatbot.py
 └── README.md
